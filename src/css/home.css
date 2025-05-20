@@ -1,0 +1,34 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: aliceblue;
+}
+
+header {
+    background-color: #1a73e8;
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cabecalho {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    margin-left: 1.5rem;
+}
+
+.cabecalho a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: ease 0.3s; 
+}
+
+.cabecalho a:hover {
+    opacity: 0.8;
+}
