@@ -13,22 +13,29 @@ const pesquisarCep = async() => {
         const address = await dados.json();
 
         // hasOWnProperty rertorna um valor booleano indicado se o objetivo possui a propriedade especifica no parenteses
-        if(address.hasOWnProperty('erro')) {
+        if(address.hasOwnProperty('erro')) {
             alert("CEP não encontrado");
         } else {
             preencherFormulario(address);
         }
+    } else {
+        alert("CEP incorreto, tente novamente");
     }
 }
 
-preencherFormulario = (endereco) => {
-    
+const preencherFormulario = (endereco) => {
+    document.getElementById('rua').value = endereco.logradouro;
+    document.getElementById('bairro').value = endereco.bairro;
+    document.getElementById('cidade').value = endereco.localidade;
+    document.getElementById('estado').value = endereco.uf;
 }
 
 // Função para limpar formulário
-limparFormulario = () => {
+const limparFormulario = () => {
     document.getElementById('rua').value = '';
     document.getElementById('bairro').value = '';
     document.getElementById('cidade').value = '';
     document.getElementById('estado').value = '';
 }
+
+document.getElementById('cep').addEventListener('focusout', pesquisarCep);
